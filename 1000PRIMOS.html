@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Primos</title>
+	<meta charset="UTF-8">
+	<script>
+        function pegaIntervalo(){
+            let num=Number(document.getElementById("n").value);
+            document.getElementById("primos").innerHTML=mostraPrimos(num,ehPrimo)
+        }
+
+        function ehPrimo(n){
+            if(n<2) return false;
+            for(let i=2 ;i<n ;i++){
+                if(n % i == 0){
+                    return false;
+                }
+            }
+            return true;
+
+        }
+        function mostraPrimos(n,ehPrimo){
+            let mensagem=""
+            for(let i=2;i<=n;i++){
+                if (ehPrimo(i)){
+                    mensagem += i + " ,";
+                }
+            }
+            return mensagem;
+        }
+
+	</script>
+</head>
+	<body>
+        </form>
+            <p>Este programa faz uma lista de números primos </p>
+            <p>Informe o n</p><input type="number" id="n">
+            <p><input type="button" onclick="pegaIntervalo()" value="envie"></p>
+            <p id="primos"></p>
+        </form>
+	</body>
+</html>
